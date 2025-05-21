@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StopWatch</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #548687;
+      font-family: Georgia, "Times New Roman", Times, serif;
+    }
+    .box {
+      height: 250px;
+      width: 500px;
+      border-radius: 20px;
+      background-color: rgb(177, 212, 248);
+      margin: 150px;
+      margin-left: 400px;
+      padding: 20px;
+    }
+    .box1 {
+      color: white;
+      padding-left: 10px;
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin: 50px;
+    }
+    button {
+      width: 250px;
+      height: 50px;
+      background-color: rgb(151, 151, 151);
+      border: 2px solid rgb(177, 212, 248);
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: large;
+      border-radius: 10px;
+    }
+    #sta:hover {
+      background-color: green;
+      cursor: pointer;
+    }
+    #sto:hover {
+      background-color: red;
+      cursor: pointer;
+    }
+    #res:hover {
+      background-color: orange;
+      cursor: pointer;
+    }
+    h1 {
+      color: rgb(15, 131, 247);
+      text-align: center;
+    }
+    .time {
+      margin-left: 110px;
+      font-size: 40px;
+    }
+  </style>
+  <body>
+    <div class="box">
+      <div class="box1">
+        <h1>StopWatch</h1>
+        <br />
+        <div class="time"><h3 id="homework">00:00:00</h3></div>
+      </div>
+      <div class="btn">
+        <button onclick="sta()" id="sta">
+          Start &ensp;<i class="fa fa-play" aria-hidden="true"></i>
+        </button>
+        <button onclick="sto()" id="sto">
+          Stop &ensp;<i class="fa fa-stop-circle-o" aria-hidden="true"></i>
+        </button>
+        <button onclick="res()" id="res">
+          Reset &ensp; <i class="fa fa-repeat" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <script>
+      var stop = true;
+      var s = 0;
+      var m = 0;
+      var hr = 0;
+
+      function sta() {
+        if (stop == true) {
+          stop = false;
+          timer();
+        }
+      }
+
+      function timer() {
+        if (!stop) {
+          s++;
+          if (s == 60) {
+            s = 0;
+            m++;
+          }
+          if (m == 60) {
+            m = 0;
+            hr++;
+          }
+          if (s < 10) {
+            sd = "0" + s;
+          }
+          if (m < 10) {
+            md = "0" + m;
+          }
+          if (hr < 10) {
+            hrd = "0" + hr;
+          }
+          document.getElementById("homework").innerHTML =
+            hrd + ":" + md + ":" + sd;
+
+          setTimeout(timer, 1000);
+        }
+      }
+
+      function sto() {
+        stop = true;
+      }
+
+      function res() {
+        stop = true;
+        hr = 0;
+        m = 0;
+        s = 0;
+        document.getElementById("homework").innerHTML = "00:00:00";
+      }
+    </script>
+  </body>
+</html>
