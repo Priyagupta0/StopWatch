@@ -4,10 +4,11 @@ A **simple, elegant, and responsive stopwatch** built using **HTML**, **CSS**, a
 Perfect for timing workouts, study sessions, coding sprints, or anything where precision matters.
 
 ---
-🚀 Live App
-🌐 Try it here: https://tranquil-custard-6aeefc.netlify.app/
----
+# 🚀 Live App
+  
+🌐 Try it here:   https://my-unique-stopwatch.netlify.app
 
+---
 ## 🔥 Features
 
 * ✅ **Start**, **Stop**, and **Reset** buttons
