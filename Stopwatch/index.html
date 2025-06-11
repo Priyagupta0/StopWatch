@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Stopwatch</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stopwatch</h1>
+      <div class="time" id="display">00:00:00</div>
+      <div class="buttons">
+        <button onclick="start()" id="sta">
+          Start <i class="fa fa-play"></i>
+        </button>
+        <button onclick="stop()" id="sto">
+          Stop <i class="fa fa-stop-circle-o"></i>
+        </button>
+        <button onclick="reset()" id="res">
+          Reset <i class="fa fa-repeat"></i>
+        </button>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
